@@ -3,13 +3,16 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :async,
+         :token_authenticatable, :omniauthable
 
   after_save :send_welcome_email
+  has_many :boards
 
   private
 
   def send_welcome_email
-    Notifier.welcome_email(self).deliver
+    Notifier.delay.welcome_email(self)
   end
+
 end

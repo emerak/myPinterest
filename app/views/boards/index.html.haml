@@ -1,0 +1,6 @@
+%ul
+-@boards.each do |board|
+  %li
+    = link_to board.name
+  %li 
+    = board.description

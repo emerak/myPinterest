@@ -1,0 +1,7 @@
+%section.board
+  %h3= @board.name
+  %p= @board.description
+  %ul
+  - @board.categories.each do |category|
+    %li 
+      = link_to category.name, search_boards_path(id: "#{category.id}")
