@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  database: xapp_dev 
+  pool: 5
+  timeout: 5000
+  username: emerak
+
+test:
+  adapter: postgresql
+  database: xapp_test
+  pool: 5
+  timeout: 5000
+  username: emerak
+
+production:
+  adapter: postgresql
+  database: xapp_production
+  pool: 5
+  timeout: 5000
+  username: emerak
