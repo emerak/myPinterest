@@ -1,8 +1,8 @@
 development:
     :address: smtp.gmail.com
     :port: 587
-    :user_name: ''
-    :password: ''
+    :user_name: 'alejandra.cernas@tangosource.com'
+    :password: 'emerak24.'
     :authentication: plain
     :enable_starttls_auto: true
 production:

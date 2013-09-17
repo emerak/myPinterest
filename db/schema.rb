@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917005314) do
+ActiveRecord::Schema.define(version: 20130917072248) do
+
+  create_table "boards", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "boards", ["user_id"], name: "index_boards_on_user_id", using: :btree
+
+  create_table "boards_categories", id: false, force: true do |t|
+    t.integer "board_id"
+    t.integer "category_id"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string "name"
+  end
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
