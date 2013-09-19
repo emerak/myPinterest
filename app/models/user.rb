@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
+
+  extend OmniauthCallbacks
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :token_authenticatable, :omniauthable, :omniauth_providers => [:twitter]
+         :token_authenticatable, :omniauthable
 
-  extend OmniauthCallbacks
   before_save :ensure_authentication_token
   after_save  :send_welcome_email
   has_many :boards
