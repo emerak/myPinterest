@@ -18,6 +18,7 @@ gem 'searcher', git: 'git@github.com:Stial08/searcher.git'
 group :test,:development do
   gem 'capybara'
   gem 'factory_girl'
+  gem 'rspec-rails'
   gem 'pry'
 end
 group :doc do
