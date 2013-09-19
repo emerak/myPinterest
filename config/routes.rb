@@ -4,7 +4,10 @@ XApp::Application.routes.draw do
       resources :boards
     end
   end
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => "registrations",
+    :omniauth_callbacks => "users/omniauth_callbacks"
+  }
   resources :boards do
     collection  do
       get :search

@@ -30,8 +30,8 @@ Devise.setup do |config|
   # find_for_authentication method and considered in your model lookup. For instance,
   # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
   # The same considerations mentioned for authentication_keys also apply to request_keys.
+  #
   # config.request_keys = []
-
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
@@ -186,7 +186,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
-  # config.token_authentication_key = :auth_token
+   config.token_authentication_key = :auth_token
 
   # ==> Scopes configuration
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
@@ -219,8 +219,8 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :github, 'c7e7b9e368e1c337cd33', '49cf8d56c636fc0f586e0ad191ccb67238ffbef2', :scope => 'user,public_repo'
-
+  config.omniauth :github, 'c7e7b9e368e1c337cd33', '49cf8d56c636fc0f586e0ad191ccb67238ffbef2'
+  config.omniauth :twitter, 'OvDWBVEZkrrfa4aTIpZg6A', 'L20uCk1s8fKDgJy89MXYvoPFjIgDVQE5fMSFoHqwZM' 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

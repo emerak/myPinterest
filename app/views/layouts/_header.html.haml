@@ -1,4 +1,5 @@
 %ul.menu
+
   - if user_signed_in?
     %li
       = link_to 'Sing out', destroy_user_session_path, method: 'delete'
@@ -7,4 +8,5 @@
       = link_to 'Sing in', user_session_path
     %li
       = link_to 'Sing up', new_user_registration_path
-
+    %li
+      = link_to 'Twitter', user_omniauth_authorize_path(:twitter), :id => "sing_in_with_twitter"
