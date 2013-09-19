@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917072248) do
+ActiveRecord::Schema.define(version: 20130919151002) do
 
   create_table "boards", force: true do |t|
     t.string   "name"
@@ -66,8 +66,15 @@ ActiveRecord::Schema.define(version: 20130917072248) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "twitter_id"
+    t.string   "twitter_screen_name"
+    t.string   "twitter_display_name"
+    t.integer  "github_id"
+    t.string   "github_user_name"
+    t.string   "github_display_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

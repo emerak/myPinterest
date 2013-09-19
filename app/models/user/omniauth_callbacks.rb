@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
         user.github_id = data["id"]
         user.github_user_name = data["login"]
         user.github_display_name = data["name"]
-        user.confirm!
+        user.save
         user
       end
 
